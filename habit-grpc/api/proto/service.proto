@@ -1,6 +1,6 @@
 syntax = "proto3"; 
-package = "habits"; 
-option go_package = "/habits/api"; 
+package habits; 
+option go_package = "/api"; 
 
 import "habit.proto"; 
 // CreateHabitRequest message sent to create a new habit

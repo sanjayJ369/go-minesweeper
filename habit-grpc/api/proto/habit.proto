@@ -1,6 +1,6 @@
 syntax = "proto3";
 package habits; 
-option go_package = "/habits/api";
+option go_package = "/api";
 
 // Habit is an object one want to complete 
 // a given number of times per week

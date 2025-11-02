@@ -1,0 +1,24 @@
+syntax = "proto3"; 
+package = "habits"; 
+option go_package = "/habits/api"; 
+
+import "habit.proto"; 
+// CreateHabitRequest message sent to create a new habit
+message CreateHabitRequest {
+    string name = 1; 
+    optional int32 weekely_frequency = 2; 
+}
+
+// CreateHabitResponse is reponse to create habit reponse  
+message CreateHabitResponse {
+    Habit habit = 1; 
+}
+
+service Habits {
+    // CreateHabit is and endpoint to register a new habit 
+    rpc CreateHabit (
+        CreateHabitRequest 
+    ) returns (CreateHabitResponse); 
+}
+
+

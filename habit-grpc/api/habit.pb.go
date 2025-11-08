@@ -25,8 +25,9 @@ const (
 // a given number of times per week
 type Habit struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	Name             string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	WeekelyFrequency int32                  `protobuf:"varint,2,opt,name=weekely_frequency,json=weekelyFrequency,proto3" json:"weekely_frequency,omitempty"`
+	Id               string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name             string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	WeekelyFrequency int32                  `protobuf:"varint,3,opt,name=weekely_frequency,json=weekelyFrequency,proto3" json:"weekely_frequency,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
@@ -61,6 +62,13 @@ func (*Habit) Descriptor() ([]byte, []int) {
 	return file_habit_proto_rawDescGZIP(), []int{0}
 }
 
+func (x *Habit) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 func (x *Habit) GetName() string {
 	if x != nil {
 		return x.Name
@@ -79,10 +87,11 @@ var File_habit_proto protoreflect.FileDescriptor
 
 const file_habit_proto_rawDesc = "" +
 	"\n" +
-	"\vhabit.proto\x12\x06habits\"H\n" +
-	"\x05Habit\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\x12+\n" +
-	"\x11weekely_frequency\x18\x02 \x01(\x05R\x10weekelyFrequencyB\x06Z\x04/apib\x06proto3"
+	"\vhabit.proto\x12\x06habits\"X\n" +
+	"\x05Habit\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12+\n" +
+	"\x11weekely_frequency\x18\x03 \x01(\x05R\x10weekelyFrequencyB\x06Z\x04/apib\x06proto3"
 
 var (
 	file_habit_proto_rawDescOnce sync.Once

@@ -22,12 +22,15 @@ type Body struct {
 	Value     int `json:"value,omitempty"`
 
 	// init fields
-	NodeId  int `json: "node_id,omitempty"`
-	NodeIds int `json:"node_ids,omitempty"`
+	NodeId  string   `json:"node_id,omitempty"`
+	NodeIds []string `json:"node_ids,omitempty"`
 
 	// error fields
 	Code int    `json:"code,omitempty"`
 	Text string `json:"text,omitempty"`
+
+	// echo server
+	Echo string `json:"echo,omitempty"`
 }
 
 func setClientAddress(req BaseMessage) BaseMessage {
